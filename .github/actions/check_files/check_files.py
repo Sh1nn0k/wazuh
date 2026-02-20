@@ -77,19 +77,20 @@ class helper:
 def translate_uid(id):
     # If wazuh_uid was not set, preserve the OS account names (e.g. root/admin/wazuh).
     import pwd
-    if wazuh_uid == -1:
-        return pwd.getpwuid(id)[0]
     if id == wazuh_uid:
         return wazuh_user_name
-    if id == 0:
+    elif id == 0:
         return "root"
-    return pwd.getpwuid(id)[0]
+    else:
+        return pwd.getpwuid(id)[0]
 
 
 def translate_gid(id):
     # If wazuh_gid was not set, preserve the OS group names (e.g. wheel on macOS).
     import grp
-    if wazuh_gid == -1:
+    if id == wazuh_gid:
+        return wazuh_group_name
+    else:
         return grp.getgrgid(id)[0]
     if id == wazuh_gid:
         return wazuh_group_name
