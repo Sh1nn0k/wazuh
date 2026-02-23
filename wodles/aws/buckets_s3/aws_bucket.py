@@ -22,7 +22,7 @@ MAX_RECORD_RETENTION = 500
 PATH_DATE_FORMAT = "%Y/%m/%d"
 DB_DATE_FORMAT = "%Y%m%d"
 DEFAULT_DATABASE_NAME = "s3_cloudtrail"
-LATE_ARRIVAL_LOG_TABLES = {"cloudtrail", "alb", "clb", "nlb"}
+LATE_ARRIVAL_LOG_TABLES = {"cloudtrail", "alb", "clb", "nlb", "guardduty"}
 
 RETRY_CONFIGURATION_URL = 'https://documentation.wazuh.com/current/amazon/services/prerequisites/' \
                           'considerations.html#Connection-configuration-for-retries'
